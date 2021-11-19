@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.care.rootu.mybatis.admin.AdminMapper">
+  		<resultMap id="admin" type="com.care.rootu.admin.dto.AdminDTO">
+  			<result property="id" column="admin_id"/>
+  			<result property="firstName" column="first_name"/>
+  			<result property="lastName" column="last_name"/>
+  			<result property="email" column="email"/>
+  			<result property="password" column="password"/>
+  		</resultMap>
+  		
+  		<select id="loginChk" resultMap="admin">
+  			select * from admin where admin_id=#{id}
+  		</select>
+  		
+  		
+  </mapper>
+  
+  
