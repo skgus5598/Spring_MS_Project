@@ -16,6 +16,10 @@
   			select * from admin where admin_id=#{id}
   		</select>
   		
+  		<insert id="createAcc">
+  			insert into admin values(#{id}, #{firstName},#{lastName},#{email},#{password})
+  		</insert>
+  		
   		
   </mapper>
   
