@@ -1,0 +1,9 @@
+
+create table supplier(
+supplier_id varchar(10) primary key auto_increment,
+supplier_code varchar(20)not null unique,
+company_name varchar(50) not null unique,
+manager varchar(20) not null,
+contact_num int(20) not null,
+address varchar(50) not null
+);

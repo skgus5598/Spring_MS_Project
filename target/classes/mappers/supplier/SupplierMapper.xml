@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.care.rootu.mybatis.supplier.SupplierMapper">
+  	<resultMap id="sup"  type="com.care.rootu.supplier.dto.SupDTO" >
+  		<id property="supplierId" column="supplier_id" />
+  		<result property="supplierCode" column="supplier_code"/>
+  		<result property="companyName" column="company_name"/>
+  		<result property="manager" column="manager"/>
+  		<result property="contactNum" column="contact_num"/>
+  		<result property="address" column="address"/>
+  	</resultMap>
+  	
+  	<select id="supList" resultMap="sup">
+  		select * from supplier
+  	</select>
+  	
+  	<insert id="insertSup">
+  		insert into supplier values(0, #{supplierCode}, #{companyName}, #{manager}, #{contactNum}, #{address})
+  	</insert>
+  
+  </mapper>

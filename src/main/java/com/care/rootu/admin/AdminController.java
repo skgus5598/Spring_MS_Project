@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.care.rootu.admin.dto.AdminDTO;
 import com.care.rootu.admin.service.AdminService;
 
@@ -21,7 +19,7 @@ public class AdminController {
 	
 	@RequestMapping("home")
 	public String home() {
-		return "home";
+		return "/default/home";
 	}
 	@RequestMapping("login")
 	public String loginPage() {
