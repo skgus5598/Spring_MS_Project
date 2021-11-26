@@ -1,0 +1,18 @@
+create table storage(
+id varchar(20) primary key,
+product_code varchar(20),
+product_name varchar(20),
+receiving_stock int,
+releasing_stock int,
+total_stock int
+);
+
+alter table storage add constraint fk_storage_product_code
+foreign key(product_code) references product(id)
+on delete cascade on update cascade;
+// 위에는 성공, 아래는 실패 
+alter table storage add constraint fk_storage_product_code
+foreign key(product_name) references product(product_name)
+on delete cascade on update cascade;
+//실패 메시지 
+ Missing index for constraint 'fk_storage_product_code' in the referenced table 'product'	0.00061 sec

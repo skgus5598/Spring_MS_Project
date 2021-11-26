@@ -54,58 +54,37 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                            
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                               Product Detail
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        제품 정보
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">제품 정보 보기</a>
-		                                    <a class="nav-link" href="#">제품 정보 변경</a>
-		                                    <a class="nav-link" href="#">제품 등록</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        재고 목록
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">입고처리</a>
-                                            <a class="nav-link" href="#">출고처리</a>
-                                            <a class="nav-link" href="#">총 재고 수량</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
+                           <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                               	제품 관리 
+                            </a>      
+
                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Suppliers
+                                재고 관리
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="${contextPath }/supply/supList">거래처 목록</a>
-                                    <a class="nav-link" href="#">거래처 정보 변경</a>
-                                    <a class="nav-link" href="${contextPath }/supply/supRegister">거래처 등록</a>
+                                    <a class="nav-link" href="#">재고 목록 보기</a>
+                                    <a class="nav-link" href="#">입고 확정</a>
+                                    <a class="nav-link" href="#">출고 확정</a>
+                                    <a class="nav-link" href="#">history</a>
                                 </nav>
                             </div>
-                            
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
+                               <a class="nav-link" href="${contextPath }/categoryList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                               	카테고리 관리 
+                            </a>                            
+                            <a class="nav-link" href="${contextPath }/customer/customerList">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                               	거래처 관리
                             </a>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                관리자 정보
                             </a>
                         </div>
                     </div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.care.rootu.mybatis.customer.CustomerMapper">
+  	<resultMap id="customer"  type="com.care.rootu.customer.dto.CustomerDTO" >
+  		<id property="customerId" column="customer_id" />
+  		<result property="customerName" column="customer_name"/>
+  		<result property="contactNum" column="contact_num"/>
+  		<result property="address" column="address"/>
+  		<result property="etc" column="etc"/>
+  		<result property="registerDate" column="register_date"/>
+  	</resultMap>
+  	
+
+  	<select id="customerList" resultMap="customer">  		
+  		select B.*from
+		(select @rownum:=@rownum+1 rn, A.* from customer A,(select @rownum:=0) R)B
+		where rn between #{start} and #{end};
+  	</select>
+  	
+  	<select id="getTotalPage" resultType="Integer">
+  		select count(*) from customer
+  	</select>
+  	
+  	
+  	<insert id="register">
+  		insert into customer values(0, #{customerName}, #{contactNum}, #{address}, #{etc}, default)
+  	</insert>
+  
+  </mapper>

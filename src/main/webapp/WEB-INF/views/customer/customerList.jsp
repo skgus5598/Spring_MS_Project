@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  <c:set var="contextPath" value="${pageContext.request.contextPath }" />            
-    
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -11,14 +10,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Sidenav Light - SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <title>Login - SB Admin</title>
+        <link href="${contextPath }/css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="sb-nav-fixed">
+    <body>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="${contextPath }/home">Start Bootstrap</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -43,7 +42,7 @@
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
@@ -114,22 +113,32 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Sidenav Light</h1>
+                        <h1 class="mt-4">Static Navigation</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Sidenav Light</li>
+                            <li class="breadcrumb-item active">Static Navigation</li>
                         </ol>
-                        <div class="card mb-4">
+                        <button onclick="location.href='${contextPath}/customer/registerView'">거래처 추가</button>
+                        <div class="card mb-4">                    
                             <div class="card-body">
-                                This page is an example of using the light side navigation option. By appending the
-                                <code>.sb-sidenav-light</code>
-                                class to the
-                                <code>.sb-sidenav</code>
-                                class, the side navigation will take on a light color scheme. The
-                                <code>.sb-sidenav-dark</code>
-                                is also available for a darker option.
+                                <p class="mb-0">
+                             		  <c:forEach var="dto" items="${boardList }">
+		                                    Customer Code : ${dto.customerId }<br>
+		                                   	Customer Name :${dto.customerName }<br>
+		                                  	Contact Number : ${dto.contactNum }<br>
+		                                   Address : ${dto.address }<br>
+		                                   ETC : ${dto.etc }<br>
+		                                   Registered Date : ${dto.registerDate }<br>
+		                                   <hr>
+                                </c:forEach>                             		 
+                             	</p>                                
                             </div>
+                            <c:forEach var="num" begin="1" end="${totalEndPage }" >
+                            	<a href="${contextPath }/customer/customerList?num=${num }">[${num }]</a>
+                            </c:forEach>
                         </div>
+                        <div style="height: 100vh"></div>
+                        <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -146,7 +155,7 @@
                 </footer>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="${contextPath }/js/scripts.js"></script>
     </body>
 </html>

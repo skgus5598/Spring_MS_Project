@@ -45,6 +45,12 @@ public class AdminController {
 	public void createAcc(AdminDTO dto, HttpServletRequest req, HttpServletResponse response) {		
 		as.createAcc(dto, req.getParameter("passwordChk") , response);
 	}
+	
+	//테스트용 
+	@GetMapping("categoryList")
+	public String category() {
+		return "/category/categoryList";
+	}
 
 	
 }

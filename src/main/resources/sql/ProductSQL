@@ -1,0 +1,14 @@
+create table product(
+id varchar(30) primary key,
+supplier_code int(20),
+category_code varchar(20),
+product_name varchar(20) not null,
+price varchar(20) not null,
+image_url varchar(50)
+);
+alter table product add constraint fk_product_supplier_code
+foreign key(supplier_code) references supplier(id) on delete cascade on update cascade;
+
+alter table product add constraint fk_product_category_code
+foreign key(category_code) references category(id) on delete cascade on update cascade;
+
